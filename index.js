@@ -2,7 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const {
   response
-} = requrie('./data.js')
+} = require('./data.js')
 
 const app = express()
 app.use(bodyParser())
@@ -30,6 +30,6 @@ function loggerMiddleware(req, res, next) {
 }
 app.use(loggerMiddleware)
 
-app.get('/getResponse', (req, res) => {
+app.get('/getAllTransactionsData', (req, res) => {
   setTimeout(() => res.status(200).end(JSON.stringify(response)), 10)
 })
